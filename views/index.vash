@@ -1,0 +1,21 @@
+﻿@html.extend('layout', function(model){
+    @html.block('body', function(model){
+        <div class="row">
+            <div class="list-group col-lg-6">
+            </div>
+        </div>
+
+        <div class="row">
+
+            @if (model.newCatError){
+                <p class="text-warning">@model.newCatError</p>
+            }
+
+            <form action="/newCategory" role="form" method="post" class="form-inline">
+                <input type="text" name="categoryName" class="form-control" placeholder="category name" />
+                <input type="submit" value="New Category" class="btn btn-primary" />
+
+            </form>
+        </div>
+    })
+})
